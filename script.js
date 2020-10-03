@@ -2,6 +2,7 @@ var player;
 var myObstacles = [];
 var score;
 
+// Starts game and creates player
 function startGame() {
   player = new component(30, 30, "red", 10, 120);
   player.gravity = 0.1;
@@ -9,6 +10,7 @@ function startGame() {
   gameArea.start();
 }
 
+// Creates canvas for game background, player, and walls
 var gameArea = {
   canvas: document.createElement("canvas"),
   start: function () {
@@ -97,7 +99,7 @@ function updateGameArea() {
     height = Math.floor(
       Math.random() * (maxHeight - minHeight + 1) + minHeight
     );
-    minGap = 50;
+    minGap = 60;
     maxGap = 200;
     gap = Math.floor(Math.random() * (maxGap - minGap + 1) + minGap);
     myObstacles.push(new component(20, height, "#3e8e41", x, 0));
