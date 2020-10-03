@@ -1,2 +1,3 @@
 # hacktober-bird
-This will ideally turn into a community made Flappy Bird type game in JS/HTML with our own twist. This is NOT for free hacktoberfest points, you don't need to make major changes but at least a bit of effort.
+This is a community made Flappy Bird inspired game made with JS, HTML, and CSS for beginners. 
+This is NOT for free hacktoberfest points, you don't have to make a major change but put a bit of effort in. 
