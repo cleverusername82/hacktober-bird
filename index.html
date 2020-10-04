@@ -9,12 +9,19 @@
   <body onload="startGame()">
     <br />
 
-    <button
+    <button id="jump"
       class="button"
       onmousedown="accelerate(-0.6)"
       onmouseup="accelerate(.4)"
     >
       Jump
+    </button>
+
+    <button id="restart"
+      class="button"
+      onclick="restart()"
+    >
+      Restart
     </button>
   </body>
 </html>

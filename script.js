@@ -24,6 +24,13 @@ var gameArea = {
   clear: function () {
     this.context.clearRect(0, 0, this.canvas.width, this.canvas.height);
   },
+  gameOver: function(score){
+    gameArea.clear();
+    gameoverMessage = new component("30px", "Arial", "black", 200, 200, "text");
+    gameoverMessage.text = "Game Over: your score is " + score;
+    gameoverMessage.update();
+    clearInterval(this.interval);
+  }
 };
 
 function component(width, height, color, x, y, type) {
@@ -87,6 +94,7 @@ function updateGameArea() {
   var x, height, gap, minHeight, maxHeight, minGap, maxGap;
   for (i = 0; i < myObstacles.length; i += 1) {
     if (player.crashWith(myObstacles[i])) {
+      gameArea.gameOver(gameArea.frameNo);
       return;
     }
   }
@@ -115,6 +123,7 @@ function updateGameArea() {
   score.update();
   player.newPos();
   player.update();
+  
 }
 
 function everyinterval(n) {
@@ -126,4 +135,8 @@ function everyinterval(n) {
 
 function accelerate(n) {
   player.gravity = n;
+}
+
+function restart(){
+  window.location.reload();
 }
